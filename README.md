@@ -4,8 +4,8 @@ This is a super simple ELI5 explanation of the CAP Theorem. After that, I explai
 
 ## Super simple explanation
 
-C = Consistency = Every user gets the same data
-A = Availability = Users can retrieve the data always
+C = Consistency = Every user gets the same data  
+A = Availability = Users can retrieve the data always  
 P = Partition tolerance = Even if there are network issues, everything works fine still
 
 Now the CAP Theorem states that in a distributed system, you need to decide whether you want consistency or availability. You cannot have both.

@@ -14,7 +14,7 @@ Now the CAP Theorem states that in a distributed system, you need to decide whet
 
 **And in non-distributed systems?** CAP Theorem only applies to distributed systems. If you only have one database, you can totally have both. (Unless that DB server if down obviously, then you have neither.
 
-**Is this always the case?** No, if everything is _green_, we have both, consistency and availability. However, if a server looses internet access for example, or there is any other fault that occurs, THEN we have only one of the two, that is either have consistency or availability.
+**Is this always the case?** No, if everything is working fine, then we have both, consistency and availability. However, if a server looses internet access for example, or there is any other fault that occurs, THEN we have only one of the two, that is either have consistency or availability.
 
 ### Example
 
@@ -56,31 +56,31 @@ Now we have two choices:
 
 **Choice 1: Prioritize Consistency (CP)**
 
--   EU users get error messages: "Database unavailable"
--   Only US users can access the system
--   Data stays consistent but availability is lost for EU users
+- EU users get error messages: "Database unavailable"
+- Only US users can access the system
+- Data stays consistent but availability is lost for EU users
 
 **Choice 2: Prioritize Availability (AP)**
 
--   EU users can still read/write to the EU replica
--   US users continue using the US master
--   Both regions work, but data becomes inconsistent (EU might have old data)
+- EU users can still read/write to the EU replica
+- US users continue using the US master
+- Both regions work, but data becomes inconsistent (EU might have old data)
 
 ## What are Network Partitions?
 
 Network partitions are when parts of your distributed system can't talk to each other. Think of it like this:
 
--   Your servers are like people in different rooms
--   Network partitions are like the doors between rooms getting stuck
--   People in each room can still talk to each other, but can't communicate with other rooms
+- Your servers are like people in different rooms
+- Network partitions are like the doors between rooms getting stuck
+- People in each room can still talk to each other, but can't communicate with other rooms
 
 Common causes:
 
--   Internet connection failures
--   Router crashes
--   Cable cuts
--   Data center outages
--   Firewall issues
+- Internet connection failures
+- Router crashes
+- Cable cuts
+- Data center outages
+- Firewall issues
 
 The key thing is: **partitions WILL happen**. It's not a matter of if, but when.
 
@@ -92,8 +92,8 @@ CAP Theorem is often presented as "pick 2 out of 3." This is wrong.
 
 So our choice is: **When a partition happens, do you want Consistency OR Availability?**
 
--   **CP Systems:** When a partition occurs → node stops responding to maintain consistency
--   **AP Systems:** When a partition occurs → node keeps responding but users may get inconsistent data
+- **CP Systems:** When a partition occurs → node stops responding to maintain consistency
+- **AP Systems:** When a partition occurs → node keeps responding but users may get inconsistent data
 
 In other words, it's not "pick 2 out of 3," it's "partitions will happen, so pick C or A."
 
